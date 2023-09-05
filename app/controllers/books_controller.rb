@@ -18,8 +18,9 @@ class BooksController < ApplicationController
     def create
         @book = Book.new(create_params)
         if @book.save
-            redirect_to books_path
+            redirect_to books_path, notice: "Book has been created!"
         else
+            flash.alert = "Failed to create book!"
             render('new')
         end
     end
@@ -38,8 +39,9 @@ class BooksController < ApplicationController
     def update
         @book = Book.find(params[:id])
         if @book.update(update_params)
-            redirect_to books_path
+            redirect_to books_path, notice: "Book has been updated!"
         else
+            flash.alert = "Failed to update book!"
             render('edit')
         end
     end
@@ -58,6 +60,6 @@ class BooksController < ApplicationController
     def destroy
         @book = Book.find(params[:id])
         @book.destroy
-        redirect_to books_path
+        redirect_to books_path, notice: "Book has been deleted!"
     end
 end

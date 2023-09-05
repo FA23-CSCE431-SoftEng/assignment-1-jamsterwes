@@ -1,4 +1,8 @@
-<%= link_to("Create New Book", new_book_path) %>
+<!-- "Home Menu Bar" -->
+<h3><%= link_to("Create New Book", new_book_path) %></h3>
+
+<!-- Flashes -->
+<%= render(partial: 'flash', locals: {flash: flash}) %>
 
 <h1>All Books</h1>
 

@@ -1,0 +1,7 @@
+<% flash.each do |type, msg| %>
+  <!-- Pick either red (alert) or green (notice) -->
+  <% color = (type == 'alert' ? '#600' : '#060') %>
+  <h2 style="color: <%= color %>; display: inline-block; border: 1px solid <%= color %>">
+    <%= msg %>
+  </h2>
+<% end %>
