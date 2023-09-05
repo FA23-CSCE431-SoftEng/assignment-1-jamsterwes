@@ -1,0 +1,10 @@
+<h3><%= link_to("Home", books_path) %></h3>
+<h3><%= link_to("Back", book_path(@book)) %></h3>
+
+<h1 style="color: #700">
+  Are you sure you want to delete '<%= @book.title %>'?
+</h1>
+
+<%= form_for(@book, method: 'delete') do |f| %>
+  <%= f.submit("Yes") %>
+<% end %>
