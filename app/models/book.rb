@@ -9,5 +9,7 @@ class Book < ApplicationRecord
   validates :price, presence: true
   
   # Validate that the book has a published_date
-  validates :published_date, presence: true
+  validates :published_date, presence: true, comparison: {
+    less_than_or_equal_to: Date.today
+  }
 end

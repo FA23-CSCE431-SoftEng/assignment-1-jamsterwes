@@ -27,7 +27,7 @@ class BooksController < ApplicationController
 
     # Handle create params
     private def create_params
-        params.require(:book).permit(:title)
+        params.require(:book).permit(:title, :author, :price, :published_date)
     end
 
     # Actual page
@@ -48,7 +48,7 @@ class BooksController < ApplicationController
 
     # Handle update params
     private def update_params
-        params.require(:book).permit(:title)
+        create_params
     end
 
     # Actual page
