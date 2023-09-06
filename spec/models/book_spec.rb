@@ -6,13 +6,19 @@ RSpec.describe Book, type: :model do
   it 'is valid when it has all attributes' do
     book = Book.new
     book.title = 'Test Title'
-    # TODO: add rest
+    book.author = 'Vince Gilligan'
+    book.price = 0.99
+    book.published_date = Date.new(2013, 9, 29)
+
     expect(book.valid?).to eq(true)
   end
 
   it 'is NOT valid when it does NOT have a title' do
     book = Book.new
-    # TODO: add rest
+    book.author = 'Vince Gilligan'
+    book.price = 0.99
+    book.published_date = Date.new(2013, 9, 29)
+
     expect(book.valid?).to eq(false)
   end
 
@@ -20,7 +26,8 @@ RSpec.describe Book, type: :model do
     book = Book.new
     book.title = 'Test Title'
     book.price = 0.99
-    book.date = Date.new(2013, 9, 29)
+    book.published_date = Date.new(2013, 9, 29)
+
     expect(book.valid?).to eq(false)
   end
 
@@ -28,7 +35,8 @@ RSpec.describe Book, type: :model do
     book = Book.new
     book.title = 'Test Title'
     book.author = 'Vince Gilligan'
-    book.date = Date.new(2013, 9, 29)
+    book.published_date = Date.new(2013, 9, 29)
+
     expect(book.valid?).to eq(false)
   end
 
@@ -37,6 +45,7 @@ RSpec.describe Book, type: :model do
     book.title = 'Test Title'
     book.author = 'Vince Gilligan'
     book.price = 0.99
+    
     expect(book.valid?).to eq(false)
   end
 
