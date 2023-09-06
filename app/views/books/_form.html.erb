@@ -1,0 +1,19 @@
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<br /><br />
+
+<%= f.label :author %>
+<%= f.text_field :author %>
+
+<br /><br />
+
+<%= f.label :price %>
+<%= f.number_field :price, step: 0.01 %>
+
+<br /><br />
+
+<%= f.label :published_date %>
+<%= f.date_select :published_date, start_year: 1900 %>
+
+<br /><br />

@@ -1,0 +1,10 @@
+<!-- "Menu Bar" -->
+<h3><%= link_to("Home", books_path) %></h3>
+
+<h1><%= @book.title %></h1>
+<div>Author: <%= @book.author %></div>
+<div>Price: $<%= @book.price %></div>
+<div>Published: <%= @book.published_date.to_s %></div>
+
+<%= link_to("Edit this book", edit_book_path(@book)) %>
+<%= link_to("Delete this book", delete_book_path(@book)) %>

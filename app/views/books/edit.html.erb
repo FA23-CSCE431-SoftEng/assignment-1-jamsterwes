@@ -1,0 +1,13 @@
+<!-- "Menu Bar" -->
+<h3><%= link_to("Home", books_path) %></h3>
+<h3><%= link_to("Back", book_path(@book)) %></h3>
+
+<!-- Flashes -->
+<%= render(partial: 'flash', locals: {flash: flash}) %>
+
+<h1>Edit Book</h1>
+
+<%= form_for @book do |f| %>
+  <%= render(partial: 'form', locals: {f: f}) %>
+  <%= f.submit "Edit Book" %>
+<% end %>

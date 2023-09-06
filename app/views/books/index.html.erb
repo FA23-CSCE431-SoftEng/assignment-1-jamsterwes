@@ -1,0 +1,13 @@
+<!-- "Home Menu Bar" -->
+<h3><%= link_to("Create New Book", new_book_path) %></h3>
+
+<!-- Flashes -->
+<%= render(partial: 'flash', locals: {flash: flash}) %>
+
+<h1>All Books</h1>
+
+<ul>
+  <% @books.each do |book| %>
+    <li><%= link_to(book.title, book_path(book)) %> | <%= link_to("Edit", edit_book_path(book)) %> | <%= link_to("Delete", delete_book_path(book)) %></li>
+  <% end %>
+</ul>
