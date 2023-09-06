@@ -8,6 +8,6 @@
 
 <ul>
   <% @books.each do |book| %>
-    <li><%= link_to(book.title, book_path(book)) %></li>
+    <li><%= link_to(book.title, book_path(book)) %> | <%= link_to("Edit", edit_book_path(book)) %> | <%= link_to("Delete", delete_book_path(book)) %></li>
   <% end %>
 </ul>
