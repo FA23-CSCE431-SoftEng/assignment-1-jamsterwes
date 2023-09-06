@@ -20,6 +20,7 @@ class BooksController < ApplicationController
         if @book.save
             redirect_to books_path, notice: "Book has been created!"
         else
+            flash.alert = "Failed to create book!"
             render('new')
         end
     end
@@ -40,6 +41,7 @@ class BooksController < ApplicationController
         if @book.update(update_params)
             redirect_to books_path, notice: "Book has been updated!"
         else
+            flash.alert = "Failed to update book!"
             render('edit')
         end
     end
